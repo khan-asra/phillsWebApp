@@ -1,0 +1,46 @@
+
+
+
+	<div class="container"
+		style="margin-top: 20px; min-height: 500px; justify-content: center;">
+		<div class="row">
+			<div class="col">
+
+				<h1>FAQ</h1>
+				<div class="p-2">
+					<form>
+						<div class="form-group">
+							<div class="mb-3">
+								 <label
+									class="form-label">Question:</label>  <input type="text"  
+            name="question"
+                [(ngModel)]="faq.question" required>
+
+
+
+							<div class="mb-3">
+								<label class="form-label">Response:</label>
+								 <textarea type="text"  
+              name="response"
+                [(ngModel)]="faq.response" required> </textarea>
+							</div>
+
+
+							<input type="submit" class="btn btn-primary"
+								value="Add/Edit FAQ!"   (click)=" addFaq(faq)"/>
+						</div>
+						</div>
+					</form>
+				</div>
+
+				<!-- Image here- -->
+			</div>
+			<div class="col">
+
+				<img class="heroimage" style="max-width: 70%;"
+					src="assets/images/FAQPageImage.jpeg">
+			</div>
+		</div>
+
+	</div>
+

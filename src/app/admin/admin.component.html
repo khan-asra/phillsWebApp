@@ -1,0 +1,235 @@
+
+
+
+
+
+<div class="container-fluid" style="margin-left: auto">
+	<!-- Card stats -->
+	<div class="row g-6 mb-6">
+		<div class="col-xl-3 col-sm-6 col-12">
+			<div class="card shadow border-0">
+				<div class="card-body">
+					<div class="row">
+						<div class="col">
+							<span class="h6 font-semibold text-muted text-sm d-block mb-2">Products</span>
+							<span class="h3 font-bold mb-0">{{products.length}}</span>
+						</div>
+						<div class="col-auto">
+							<div
+								class="icon icon-shape bg-tertiary text-white text-lg rounded-circle">
+								<i class="bi bi-credit-card"></i>
+							</div>
+						</div>
+					</div>
+					<div class="mt-2 mb-0 text-sm">
+						<span class="badge badge-pill bg-soft-success text-success me-2">
+							<i class="bi bi-arrow-up me-1"></i>Shoes
+						</span> <span class="text-nowrap text-xs text-muted"> styles added
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-xl-3 col-sm-6 col-12">
+			<div class="card shadow border-0">
+				<div class="card-body">
+					<div class="row">
+						<div class="col">
+							<span class="h6 font-semibold text-muted text-sm d-block mb-2">New
+								Design</span> <span class="h3 font-bold mb-0"> Product Design</span>
+						</div>
+						<div class="col-auto">
+							<div
+								class="icon icon-shape bg-primary text-white text-lg rounded-circle">
+								<i class="bi bi-people"></i>
+							</div>
+						</div>
+					</div>
+					<div class="mt-2 mb-0 text-sm">
+						<span class="badge badge-pill bg-soft-success text-success me-2">
+							<i class="bi bi-arrow-up me-1"></i>Shoes
+						</span> <span class="text-nowrap text-xs text-muted">Style</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-xl-3 col-sm-6 col-12">
+			<div class="card shadow border-0">
+				<div class="card-body">
+					<div class="row">
+						<div class="col">
+							<span class="h6 font-semibold text-muted text-sm d-block mb-2">Admin
+								Controls</span> <span class="h5 font-bold mb-0">
+								<ul>
+
+									<li>Add Products</li>
+									<li>Delete Products</li>
+									<li>Update Product</li>
+
+								</ul>
+
+							</span>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+				<div class="col-xl-3 col-sm-6 col-12">
+			<div class="card shadow border-0">
+				<div class="card-body">
+					<div class="row">
+						<div class="col">
+							<span class="h6 font-semibold text-muted text-sm d-block mb-2">FAQs</span>
+							<span class="h3 font-bold mb-0">{{faqs.length}}</span>
+						</div>
+						<div class="col-auto">
+							<div
+								class="icon icon-shape bg-tertiary text-white text-lg rounded-circle">
+								<i class="bi bi-credit-card"></i>
+							</div>
+						</div>
+					</div>
+					<div class="mt-2 mb-0 text-sm">
+						<span class="badge badge-pill bg-soft-success text-success me-2">
+							<i class="bi bi-arrow-up me-1"></i>Questions
+						</span> <span class="text-nowrap text-xs text-muted"> 
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+</div>
+
+
+
+
+
+<!-- ----------------------- -->
+
+
+<div class="container-fluid" style="margin-left: auto">
+	<div class="card shadow border-0 mb-7">
+
+		<div class="row">
+			<div class="col-12 col-md-8">
+				<h1>{{outMessage}}</h1>
+
+				<button (click)="showTable()" class="btn btn-primary" *ngIf="!show"
+					style="margin-left: auto; margin-right: auto">Show
+					Products</button>
+
+				<button (click)="hideTable()" class="btn btn-warning" *ngIf="show">Hide
+					Products</button>
+
+
+				<div *ngIf="show">
+
+					<table class="table table-hover table-warning">
+						<thead>
+							<tr>
+
+								<th scope="col">Product Name</th>
+								<th scope="col">Product Price</th>
+								<th scope="col">Product Description</th>
+
+							</tr>
+						</thead>
+						<tbody *ngFor="let p of products ">
+							<tr>
+								<td>{{p.productName}}</td>
+								<td>{{p.price}}</td>
+								<td>{{p.description}}</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+			</div>
+
+
+			<div class="col-6 col-md-4">
+				<div class="demo-inline-calendar-card   ">
+					<mat-calendar [(selected)]="selected"></mat-calendar>
+
+					<p>Selected date: {{selected}}</p>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="row">
+			<div class="col-6 col-md-4">
+
+
+
+
+
+
+
+				<div class="container-fluid" style="margin-left: auto">
+					<div class="card shadow border-0">
+
+						<div class="row">
+							<div class="col ">
+							<!-- 	<button (click)="showTable()" class="btn btn-primary"
+									*ngIf="!show" >Show
+									FAQs</button>
+
+								<button (click)="hideTable()" class="btn btn-warning"
+									*ngIf="show">Hide FAQs</button>
+ -->
+								
+
+									<table class="table table-hover table-warning">
+										<thead>
+											<tr>
+												<th scope="col">Questions</th>
+												<th scope="col">Response</th>
+											</tr>
+										</thead>
+										<tbody *ngFor="let faq of faqs ">
+											<tr>
+												<td>{{faq.question}}</td>
+												<td>{{faq.response}}</td>
+											</tr>
+										</tbody>
+									</table>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+
+			</div>
+			<div class="col-6 col-md-4"></div>
+			<div class="col-6 col-md-4"></div>
+		</div>
+
+
+		<div class="row">
+			<div class="col-6"></div>
+			<div class="col-6"></div>
+		</div>
+
+
+
+	</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,107 @@
+
+<div class="container mt-5">
+<table mat-table [dataSource]="faqs" class="mat-elevation-z8">
+
+  <!---Datasourse is that data we want to show admin -->
+
+  <!-- Position Column -->
+
+
+  <ng-container matColumnDef="id" >
+    <th mat-header-cell *matHeaderCellDef   style="width:100px">  ID </th>
+    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="question" >
+    <th mat-header-cell *matHeaderCellDef   style="width:400px"> Question</th>
+    <td mat-cell *matCellDef="let element"> {{element.question}} </td>
+  </ng-container>
+
+    <ng-container matColumnDef="response"   >
+    <th mat-header-cell *matHeaderCellDef    style="width:400px"> Response </th>
+    <td mat-cell *matCellDef="let element"> {{element.response}} </td>
+  </ng-container>
+  
+  
+    <!-- Symbol Column  https://fonts.google.com/icons  EDIT AND DELETE -->
+   <ng-container matColumnDef="edit">
+    <th mat-header-cell *matHeaderCellDef   style="width:50px">Edit </th>
+    <td mat-cell *matCellDef="let element"> 
+    
+    
+    
+    <button mat-icon-button    (click)="editFaq(element.id)">
+    <mat-icon>
+    
+<!--    <span class="material-symbols-rounded">
+edit
+</span>
+     -->
+     edit
+    </mat-icon>
+    </button>
+     </td>
+  </ng-container>
+
+
+
+
+   <!-- Symbol Column  https://fonts.google.com/icons   DELETE -->
+   <ng-container matColumnDef="delete">
+    <th mat-header-cell *matHeaderCellDef  style="width:50px">Delete </th>
+    <td mat-cell *matCellDef="let element"> 
+    <button mat-icon-button   color="warm"  (click)="deleteFaq(element.id)">
+    
+
+    <mat-icon>
+    
+delete
+    
+    </mat-icon>
+    </button>
+    
+    
+     </td>
+    
+    
+  </ng-container>
+
+
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

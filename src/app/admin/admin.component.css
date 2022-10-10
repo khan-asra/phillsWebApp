@@ -1,0 +1,41 @@
+mat-grid-list{
+	margin-left:auto;
+	margin-right:auto;
+	
+	
+	
+}
+
+
+
+
+.demo-inline-calendar-card {
+  width: 300px;
+justify-content:center;
+margin-left:auto;
+margin-right:auto
+}
+
+p{
+	font-size:20px;
+
+	
+}
+
+.row{
+	margin:12px;
+	
+	
+}
+.table{
+	background-color:light-yellow
+}
+
+*{
+	background-color:light-grey;
+	
+}
+
+/* Webpixels CSS */
+/* Utility and component-centric Design System based on Bootstrap for fast, responsive UI development */
+/* URL: https://github.com/webpixels/css */

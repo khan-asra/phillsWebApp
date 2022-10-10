@@ -1,0 +1,76 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mt-40 p-2">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">Art World</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/">Home</a>
+        </li>
+        
+         <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/aboutMe">About Me</a>
+        </li>
+        
+        
+          <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/gallery">Gallery</a>
+        </li>
+        
+      
+       
+         <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/user"
+          
+          *ngIf="userService.roleMatch(['User'])"
+          >User </a>
+        </li>
+
+         <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/contactMe">Contact us</a>
+        </li>
+        
+          <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/faq">FAQ</a>
+        </li>
+            
+      </ul>
+      
+      <span class="button-gap"></span>
+      
+ 
+      
+   <!--    <button type="button" class="btn btn-success"  *ngIf="!isLoggedIn()" routerLink="/login" >Login </button> -->
+        <button type="button" class="btn btn-danger"   *ngIf="isLoggedIn()"  (click)="logout()" >Log out  </button>
+    </div>
+  </div>
+</nav>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mt-40 p-2"  *ngIf="isLoggedIn()" >
+  <div class="container-flex">
+
+
+ <span class="button-gap"  style="margin:15px"></span>
+        <button type="button" class="btn btn-warning"     *ngIf="isAdmin()"  routerLink="/admin" > Dashboard </button>
+        <span class="button-gap"  style="margin:15px"></span> 
+           <button type="button" class="btn btn-warning"     *ngIf="isAdmin()"  routerLink="/addNewProduct" >Add Product  </button>
+       <span class="button-gap"  style="margin:15px"></span>
+        <button type="button" class="btn btn-warning"     *ngIf="isAdmin()"  routerLink="/showProductInformation" >Product Information  </button>
+  <span class="button-gap"  style="margin:15px"></span>
+        <button type="button" class="btn btn-warning"     *ngIf="isAdmin()"  routerLink="/addFaq" >Add Faq  </button>
+
+  <span class="button-gap"  style="margin:15px"></span>
+        <button type="button" class="btn btn-warning"     *ngIf="isAdmin()"  routerLink="/faqDetails" >Faq Operations </button>
+        
+        
+        
+        
+        
+</div>
+</nav>
+
+
+

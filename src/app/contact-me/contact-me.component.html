@@ -1,0 +1,64 @@
+
+<form style=" margin-top:30px;"   th:action="@{/submitContactEmail}" method="post">
+	<div class="container"
+		style=" min-height:460px; justify-content: center;">
+		<div class="row">
+			<div class="col">
+				<h1 >Contact us</h1>
+				<div class="p-2">
+					Form for contact us 
+						<div class="row">
+							<div class="form-group col-md-6">
+								<label for="inputFirstName">Name First</label> <input
+									type="text" class="form-control" name="firstName" [(ngModel)]="firstName"
+									placeholder="John" required>
+							</div>
+							<div class="form-group col-md-6">
+								<label for="inputLastName">Last Name</label> <input type="text"
+									class="form-control" [(ngModel)]="lastName" name="lastName" placeholder="Doe" required>
+							</div>
+						</div>
+
+						<div class="row">
+
+							<div class="form-group">
+								<label for="inputEmail">Email</label> <input type="email"
+									class="form-control" [(ngModel)]="email" placeholder="Email" name="email" required>
+							</div>
+
+						</div>
+						<div class="row">
+
+							<div class="form-group">
+								<label for="inputSubject">Subject</label> <input type="text" required
+									class="form-control" [(ngModel)]="message"  placeholder="Enter Subject here"  name="subject">
+							</div>
+						</div>
+						
+
+				
+				</div>
+
+		
+			</div>
+			<div class="col" style="margin-top:60px">
+
+				<div class="row">
+
+					<div class="form-group">
+						<label for="inputSubject">Message</label>
+						<textarea  rows="6" cols="50"
+							class="form-control" id="inputMessage" placeholder="" name="message" required></textarea>
+							
+							<button style="margin-top: 20px;" type="submit"
+							class="btn btn-primary"         (click)=" sendMail(firstName,lastName,email,message)">Submit</button>
+					</div>
+				</div>
+				
+			</div>	
+		</div>
+
+	</div>
+
+</form>
+
