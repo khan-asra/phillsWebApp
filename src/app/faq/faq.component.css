@@ -19,3 +19,40 @@
     padding: 1rem;
     
   }
+
+  .center-div{
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -webkittransform: translate(-50%, -50%);
+}
+.center-div p{
+  font-size: 1.3rem;
+  padding: 10px 0 20px 0;
+  color: #fff;
+
+}
+
+a{
+  border: 1px solid rgb(64, 79, 168);;
+  border-radius: 100px;
+  margin-top: 50px;
+  padding: 12px 35px;
+  outline : none;
+  color: rgb(64, 79, 168);
+  font-size : 1rem;
+  font-weight: 400;
+  line-height: 1.4;
+  text-align: center;
+}
+
+a:hover{
+  color: #50d1c0;
+  background: #fff;
+  text-decoration: none;
+  box-shadow: 0 0 20px 0 rgba(0,0,0,0.3);
+}
