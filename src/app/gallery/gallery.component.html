@@ -1,19 +1,11 @@
 
-<div class="container" style="margin-top: 20px;">
-	<div class="row justify-content-between">
-
-
-
-		
-	</div>
-</div>
 
 
 
 
 <div class="container">
 	<div class="row text-center">
-		<h1>Gallery</h1>
+		<h1 style="margin-top: 15px; font-size: 2rem; text-align: left; font-weight: 500;">Best Sellers</h1>
 		<br>
 	</div>
 	<div class="row">
@@ -28,7 +20,7 @@
 					<div class="row">
 						<div style="width: 20rem;" *ngFor="let product of products ">
 							<div class="item mb-4">
-								<div class="card border-0 shadow"   >
+								<div class="card">
 									<!-- will add th eimage here  -->
 									<div class="card-body">
 										<!-- <div *ngFor="let p of product.productImages ">
@@ -37,15 +29,14 @@
 										</div> -->
 
 										<img [src]="product.productImages[0].url" class="d-block w-100" alt="..."
-												style="height: 180px; width: auto; margin-left: auto; margin-right: auto">
+											style="height: 180px; width: auto; margin-left: auto; margin-right: auto">
 										<h5 class="card-title">{{product.productName}}</h5>
 										<h5 class="card-subtitle mb-2 text-muted">$
 											{{product.price}}</h5>
 
-										<h5 class="card-title"
-											style="while-space: inherit; text-overflow: ellipsis;">{{product.description}}</h5>
-										<button type="button" class="btn btn-success"
-											routerLink="/login">View</button>
+										<h5 class="card-description" style="while-space: inherit; text-overflow: ellipsis;">
+											{{product.description}}</h5>
+										<button type="button" class="btn btn-success" routerLink="/login">View</button>
 
 									</div>
 
@@ -68,11 +59,3 @@
 		</div>
 	</div>
 </div>
-
-
-
-
-
-
-
-

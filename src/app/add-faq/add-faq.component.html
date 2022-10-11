@@ -1,4 +1,4 @@
-
+<!-- 
 
 
 	<div class="container"
@@ -33,14 +33,33 @@
 					</form>
 				</div>
 
-				<!-- Image here- -->
-			</div>
-			<div class="col">
 
-				<img class="heroimage" style="max-width: 70%;"
-					src="assets/images/FAQPageImage.jpeg">
 			</div>
 		</div>
 
 	</div>
+ -->
+<div class="container">
+	<h1>Add/Edit Faq</h1>
+	<div class="main">
+		<form>
+			<div class="form-group">
+				<div class="mb-3">
+					<label class="form-label" style="text-align;">Question:</label> <br>
+					<input style="width: 35%;" type="text" name="question" [(ngModel)]="faq.question"
+						required>
 
+
+<br><br>
+					<div class="mb-3">
+						<label class="form-label">Response:</label><br>
+						<textarea type="text" style="width: 35%;" name="response" [(ngModel)]="faq.response" required> </textarea>
+					</div>
+
+
+					<input type="submit" class="btn btn-primary" value="Add/Edit FAQ!" (click)=" addFaq(faq)" />
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
