@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Faq } from '../_model/Faq';
+import { PotentialCustomer } from '../_model/PotentialCustomer';
 
 @Injectable({
   providedIn: 'root'
@@ -29,12 +30,19 @@ public getAllFaqs(){
 }
 
 
-
+/** 
 public sendEmail(firstName:string, lastName:string, email:string,message:string,subject:string){
 	console.log("checking")
 		return this.httpClient.post<string>("http://localhost:9090/submitContactEmail/",+firstName/+lastName/+email/+subject/+message );
 }
+*/
 
+public sendEmail(potientialCust:PotentialCustomer){
+
+	console.log("checking")
+		return this.httpClient.post<PotentialCustomer>("http://localhost:9090/sendMail",potientialCust);
+
+}
 
 
 
