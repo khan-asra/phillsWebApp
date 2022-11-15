@@ -40,3 +40,9 @@ mat-grid-tile{
 	background-color: rgba(228, 215, 215, 0.2);
 	
 }
+
+.card-body .icon{
+	object-fit: fill;
+width: 20px;
+	
+}

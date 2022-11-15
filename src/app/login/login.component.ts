@@ -30,6 +30,8 @@ export class LoginComponent implements OnInit {
  // for future on the client requets we can add user page - (Out of scope)
  // if the user name password is not a match we will get an error msg 
  
+ 
+ 
   login(loginForm:any){
 	this.errorMsg=""
 	this.userService.login(loginForm.value).subscribe(

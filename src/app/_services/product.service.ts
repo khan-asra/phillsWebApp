@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Product } from '../_model/product';
+import { PotentialCustomer } from '../_model/PotentialCustomer';
 
 @Injectable({
   providedIn: 'root'
@@ -53,5 +54,12 @@ public getAllProducts(){
 
 public getProductById(productId:number){
 	return this.httpClient.get<Product>("http://localhost:9090/getProductById/"+productId);
+}
+
+
+// addding PotentialCustomer 
+
+  public getPotentialCust(){
+	return this.httpClient.get<PotentialCustomer[]>("http://localhost:9090/getPotentialCustomers" );
 }
 }

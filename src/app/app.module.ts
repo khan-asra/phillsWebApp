@@ -10,7 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './header/header.component';
 import { ForbiddenComponent } from './forbidden/forbidden.component';
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { AuthInterceptor } from './_auth/auth.interceptor';
@@ -40,7 +40,8 @@ import { AboutMeComponent } from './about-me/about-me.component';
 import { ContactMeComponent } from './contact-me/contact-me.component';
 import { FaqComponent } from './faq/faq.component';
 import { AddFaqComponent } from './add-faq/add-faq.component';
-import { FaqDetailsComponent } from './faq-details/faq-details.component'; 
+import { FaqDetailsComponent } from './faq-details/faq-details.component';
+import { DisplayProductComponent } from './display-product/display-product.component'; 
 
 
 
@@ -62,7 +63,8 @@ import { FaqDetailsComponent } from './faq-details/faq-details.component';
     ContactMeComponent,
     FaqComponent,
     AddFaqComponent,
-    FaqDetailsComponent
+    FaqDetailsComponent,
+    DisplayProductComponent
   ],
   imports: [
     BrowserModule,
@@ -77,7 +79,8 @@ import { FaqDetailsComponent } from './faq-details/faq-details.component';
     MatNativeDateModule,
     MatInputModule,
     MatIconModule,
-    MatTableModule,MatDialogModule
+    MatTableModule,MatDialogModule,
+    ReactiveFormsModule
     
   ],
   providers: [
