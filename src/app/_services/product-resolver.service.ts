@@ -14,7 +14,7 @@ export class ProductResolverService implements Resolve<Product> {
   
   
 	resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot):Observable<Product> {
-		 const id= route.paramMap.get("productId")
+		 const id = route.paramMap.get("productId")
 		 
 		 if(id){
 			// if id is not null then we fetch details from observable 
@@ -39,6 +39,7 @@ export class ProductResolverService implements Resolve<Product> {
 	public getProduct(){
 		//return Empty object of product 
 		return{
+			productId:0,
 			productName: "",
    			price : 0,
     		description: "",

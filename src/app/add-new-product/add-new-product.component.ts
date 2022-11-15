@@ -1,6 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormControl, FormGroup, NgForm,ReactiveFormsModule  } from '@angular/forms';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { FileHandler } from '../_model/modelHandler';
@@ -16,15 +16,14 @@ export class AddNewProductComponent implements OnInit {
 
 
 product:Product ={
-	
+	productId:0,
 	productName: "",
     price : 0,
     description: "",
     productImages:[]
-    
-	
+   
 }
-
+productForm: FormGroup | any;
 
 
 addProduct(productForm:NgForm){
@@ -99,6 +98,15 @@ onFileSelected(event:any){
 	//check the app-router to view the resolver setting - key is set as Product 
 	//whatever we will get from the resolver will be binded to the product and displayed to the form 
 	this.product= this.activatedRoute.snapshot.data['product']
+	console.log(this.product)
+	
+	
+	this.productForm = new FormGroup({
+		'productName' : new FormControl(),
+		'price':new FormControl(),
+		'description' :new FormControl(),
+		'productImage': new FormControl()
+	})
 	
   }
 

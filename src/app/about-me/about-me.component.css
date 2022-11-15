@@ -1,0 +1,48 @@
+
+  
+  .divider-shape {
+    height: 0;
+    margin: 0.5rem 0;
+    overflow: hidden;
+    border-top: 3px solid rgba(0, 0, 0, 0.15);
+    background-color:#46a049;
+    width: 4rem;
+  }
+  
+   .work {
+    background-color: #ffffff;
+    color:  #1d1e22;
+    border-bottom: 1px solid #cdcdcd;  
+  }
+  .about {
+    background-color: #ffffff;
+    color: #1d1e22;
+    border-bottom: 1px solid #cdcdcd; 
+  }
+    	 .card-img-overlay {
+      	background-color: rgba(0, 0, 0, 0.7);
+    	} 
+    
+    	.card:hover .card-img-overlay {
+      	background-color: rgba(0, 0, 0, 0.3);
+    	}
+    	.card1 img {
+    	 max-height: 420px;
+      	object-fit: cover;
+    	}
+    	.card2 img,
+    	.card3 img {
+      	max-height: 200px;
+     	 object-fit: cover;
+    	}
+    @media (max-width: 768px) {
+      .card1 img {
+        max-height: 300px;
+      }
+      .card2 img,
+      .card3 img {
+        max-height: 300px;
+        width: 100%;
+      }
+    }
+  

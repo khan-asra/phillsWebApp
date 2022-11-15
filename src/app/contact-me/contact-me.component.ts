@@ -2,7 +2,8 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FaqService } from '../_services/faq.service';
 import { PotentialCustomer } from '../_model/PotentialCustomer';
-
+import { Product } from '../_model/product';
+import { ActivatedRoute} from '@angular/router';
 @Component({
   selector: 'app-contact-me',
   templateUrl: './contact-me.component.html',
@@ -10,12 +11,36 @@ import { PotentialCustomer } from '../_model/PotentialCustomer';
 })
 export class ContactMeComponent implements OnInit {
 
-  constructor(private faqService:FaqService) { }
+  constructor(private faqService:FaqService,private activatedRoute: ActivatedRoute) { }
+
+product:Product ={
+	productId :0,
+	
+	productName: "",
+    price : 0,
+    description: "",
+    productImages:[]
+    }
+    
 
 
+  ngOnInit(): void {
+	this.product = this.activatedRoute.snapshot.data['product']
+	//this will check the id
+	if(this.product.productId > 0){
+		this.potentialCustomer.message= "Hello,\nI am interested in one of your shoe design and would like to know more it. "+ "Product Details are:\n"
+		+"Name: "+ this.product.productName + 
+		"\n Product ID: " +this.product.productId + 
+		"\n Product Description: " +this.product.description +
+		"\nThank you."
+		
+		
+		}
+		
+		
 
 
-  ngOnInit(): void {}
+}
   	potentialCustomer: PotentialCustomer = {
 		firstName: "",
 		lastName: "",

@@ -1,8 +1,9 @@
 
-<form style=" margin-top:30px;"   th:action="@{/submitContactEmail}" method="post">
+
+<form style=" margin-top:30px;"   method="post">
 	<div class="container"
-		style=" min-height:460px; justify-content: center;">
-		<div class="row">
+		style=" min-height:460px; justify-content: center; ">
+		<div class="row"  style=" padding:30px; border:1px solid grey; border-radius:20px;">
 			<div class="col">
 				<h1 >Contact us</h1>
 				<div class="p-2">
@@ -10,7 +11,7 @@
 						<div class="row">
 							<div class="form-group col-md-6">
 								<label for="inputFirstName">Name First</label> <input
-									type="text" class="form-control" name="firstName"[(ngModel)]="potentialCustomer.firstName" 
+									type="text" class="form-control"  id ="firstNmae" name="firstName"[(ngModel)]="potentialCustomer.firstName" 
 									placeholder="John" required>
 							</div>
 							<div class="form-group col-md-6">
@@ -47,7 +48,7 @@
 
 					<div class="form-group">
 						<label for="inputSubject">Message</label>
-						<textarea  rows="6" cols="50"
+						<textarea  rows="7" cols="60"
 							class="form-control" id="inputMessage" placeholder="" name="message" required [(ngModel)]="potentialCustomer.message" ></textarea>
 							
 							<button style="margin-top: 20px;" type="submit"

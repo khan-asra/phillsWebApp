@@ -16,12 +16,18 @@ import { FaqComponent } from './faq/faq.component';
 import { AddFaqComponent } from './add-faq/add-faq.component';
 import { FaqDetailsComponent } from './faq-details/faq-details.component';
 import { FaqResolverService } from './_services/faq-resolver.service';
+import {DisplayProductComponent} from './display-product/display-product.component'
 
 const routes: Routes = [
 	
 	{path:'',component:HomeComponent},
 	{path:'aboutMe',component:AboutMeComponent},
-	{path:'contactMe',component:ContactMeComponent},
+	{path:'contactMe',component:ContactMeComponent,
+	resolve:{
+		product:ProductResolverService
+	}
+	
+	},
 	{path:'admin',component:AdminComponent, canActivate: [AuthGuard],data:{roles:['Admin']}},
 	{path:'user',component:UserComponent, canActivate: [AuthGuard],data:{roles:['User']}},
 	{path:'forbidden',component:ForbiddenComponent},
@@ -37,7 +43,12 @@ const routes: Routes = [
 	resolve:{
 		product:ProductResolverService
 	}
+	},
+	{path:'displayProduct', component: DisplayProductComponent,
 	
+	resolve:{
+		product:ProductResolverService
+	}
 	},
 	{path:'gallery',component: GalleryComponent},
 	{path:'showProductInformation',component: ShowProductInformationComponent}

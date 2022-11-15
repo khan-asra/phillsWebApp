@@ -1,19 +1,6 @@
-
-<div class="container" style="margin-top: 20px;">
-	<div class="row justify-content-between">
-
-
-
-		
-	</div>
-</div>
-
-
-
-
 <div class="container">
 	<div class="row text-center">
-		<h1>Gallery</h1>
+		<h1 style="margin-top: 15px; font-size: 2rem; text-align: left; font-weight: 500;">Best Sellers</h1>
 		<br>
 	</div>
 	<div class="row">
@@ -28,7 +15,7 @@
 					<div class="row">
 						<div style="width: 20rem;" *ngFor="let product of products ">
 							<div class="item mb-4">
-								<div class="card border-0 shadow"   >
+								<div class="card">
 									<!-- will add th eimage here  -->
 									<div class="card-body">
 										<!-- <div *ngFor="let p of product.productImages ">
@@ -37,15 +24,16 @@
 										</div> -->
 
 										<img [src]="product.productImages[0].url" class="d-block w-100" alt="..."
-												style="height: 180px; width: auto; margin-left: auto; margin-right: auto">
+											style="height: 180px; width: auto; margin-left: auto; margin-right: auto">
 										<h5 class="card-title">{{product.productName}}</h5>
 										<h5 class="card-subtitle mb-2 text-muted">$
 											{{product.price}}</h5>
 
-										<h5 class="card-title"
-											style="while-space: inherit; text-overflow: ellipsis;">{{product.description}}</h5>
-										<button type="button" class="btn btn-success"
-											routerLink="/login">View</button>
+										<h5 class="card-description" style="while-space: inherit; text-overflow: ellipsis;">
+											{{product.description}}</h5>
+										<button type="button" class="btn btn-success" (click)="displayProduct(product.productId)">View</button>
+										
+										 <img src="../../assets/images/moreImages.png"   (click)="showImages(product)" class="icon" style="padding:3px;">
 
 									</div>
 
@@ -70,9 +58,75 @@
 </div>
 
 
+<!-- 
+<div class="container" style="margin-top: 20px;">
+	<div class="row justify-content-between">
+
+	</div>
+</div>
+
+<div class="container">
+	<div class="row text-center">
+		<h1>Phill's Collection</h1>
+		<br>
+	</div>
+	<div class="row">
+		<div class="col">
 
 
 
+
+			<div class="container-fluid mb-4">
+				<div class="card-group">
+
+					<div class="row"  >
+						<div style="width: 20rem;" *ngFor="let product of products " >
+							<div class="item mb-4"  >
+								<div class="card border-0 shadow"    >
+									will add th eimage here 
+									<div class="card-body">
+									
+
+
+										<img [src]="product.productImages[0].url" class="cardImage" alt="product image "
+												style="height: 180px; width: auto; margin-left: auto; margin-right: auto">
+										<h5 class="card-title">{{product.productName}}</h5>
+										<h5 class="card-subtitle mb-2 text-muted">
+											{{product.price | currency:'CAD'}}</h5>
+							
+										<h5 class="card-title"
+											style="while-space: inherit; text-overflow: ellipsis;"> {{product.description}}</h5>
+											
+											   <img src="../../assets/images/moreImages.png"   (click)="showImages(product)" style="padding:3px;">
+											  
+											   <button type="button" class="btn btn-success"
+											
+										(click)="displayProduct(product.productId)"
+											   >More Info</button>
+
+									</div>
+
+								</div>
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+ -->
 
 
 

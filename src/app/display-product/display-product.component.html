@@ -1,0 +1,53 @@
+
+<div class="container">
+	<div class="card">
+		<div class="form">
+			<div class="left-side">
+
+				<div class="card"
+					style="height: 300px; position: relative; width: auto; justify-content: center;">
+					<img [src]="product.productImages[imageSelected].url">
+
+				</div>
+
+				<mat-grid-list cols="2" gutterSize="8" rowHeight="1:1">
+
+				<mat-grid-tile
+					*ngFor="let file of product.productImages;let i = index"
+					(click)="imagesChange(i)" style="border:1px solid lightgrey;">
+				<span><img [src]="file.url" height="100px"></span> </mat-grid-tile> </mat-grid-list>
+
+			</div>
+			<div class="right-side">
+
+				<div class="indexing"></div>
+				<h3>{{product.productName}}</h3>
+				<h4>Estimated Cost {{product.price|currency:'CAD'}}</h4>
+			
+		
+				<div class="designer">
+					<h5>Product ID :</h5>
+					<p>{{product.productId}}</p>
+
+				</div>
+				<div class="color">
+					<span></span> <span></span> <span></span>
+				</div>
+				<div class="options">
+				
+					<button  (click)="sendEmailWithProdDetails(product.productId)">Send Email</button>
+				</div>
+				
+				<div class="description">
+					<h4>Description</h4>
+					<p>{{product.description}}</p>
+					<ul class="features">
+						<li>Customization available for all sizes</li>
+						<li>Contrasted with the color of your choice</li>
+						<li>Designed can be copied on any shoe</li>
+					</ul>
+				</div>
+	</div>
+		</div>
+	</div>
+</div>

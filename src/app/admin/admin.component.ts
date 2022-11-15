@@ -4,7 +4,7 @@ import { Product } from '../_model/product';
 import { FaqService } from '../_services/faq.service';
 import { ProductService } from '../_services/product.service';
 import { UserService } from '../_services/user.service';
-
+import { PotentialCustomer } from '../_model/PotentialCustomer';
 
 
 
@@ -33,9 +33,11 @@ export class AdminComponent implements OnInit {
 	this.forAdmin();
 	this.getAllProducts()
 	this.getFaq()
+	this.getPotentialCustomer()
   }
   
   products:Product[]=[]
+  potentialCustomer:PotentialCustomer[]=[]
 
 
 forAdmin(){
@@ -85,6 +87,14 @@ getFaq(){
 			},
 			(error) => console.log(error)
 		);
+}
+
+getPotentialCustomer(){
+	this.productService.getPotentialCust().subscribe(
+		(potentialCust:any[]) =>{
+			this.potentialCustomer =potentialCust
+		},(error) =>console.log(error)
+	);
 }
 
 }
